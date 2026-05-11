@@ -87,7 +87,9 @@ cart.forEach((cartItem)=>{
                 </div>
               </div>
             </div>
-          </div>`;
+          </div>
+          
+          `;
 
 document.querySelector('.js-order-summary').innerHTML = productHtml
           
