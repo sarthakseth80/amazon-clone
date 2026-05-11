@@ -1,4 +1,6 @@
 
+import {cart} from "../data/cart.js"  // step 3 completed 
+
 let productsHTML  = ''; // initially empty because if no item is present 
 
 products.forEach((p)=>{
@@ -63,28 +65,38 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML;
 document.querySelectorAll('.js-add-to-cart-button')
 .forEach((btn)=> {
   btn.addEventListener('click', () => {
-     const productId = btn.dataset.productId;
+     const productId = btn.dataset.productId;   // add to cart button  pressed
      
      let matchingItem;
     cart.forEach((item) => {
       
       if(productId === item.productId){
-        matchingItem =item ;
+        matchingItem =item ;         
       }
     })
 
     if(matchingItem){
-      matchingItem.quantity += 1
+      matchingItem.quantity += 1     // increment the quantity by 1 if product alredy present in the card
     }
 
     else{
      cart.push(
       {
-      productId : productId ,
+      productId : productId ,       // insert to Cart array if unique product Selected
       quantity : 1
      });
     }
+
+    let totalQuantity=0 ;            // Calculate total quantity
+    cart.forEach((i)=> {
+      totalQuantity += i.quantity
+    })
+
+    document.querySelector('.js-cart-quantity').innerHTML = totalQuantity
+
+
+  
+     console.log(totalQuantity)
      console.log(cart)
-    
   })
-})
+})  
