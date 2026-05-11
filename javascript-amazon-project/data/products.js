@@ -1,6 +1,6 @@
 // 2 products can have same name , but they have different IDs.
 
-const products = [
+export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",  //each product has a unique id, generated using https://www.uuidgenerator.net/
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",

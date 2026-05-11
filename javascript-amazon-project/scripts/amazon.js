@@ -1,6 +1,6 @@
 
 import {cart} from "../data/cart.js"  // step 3 completed 
-
+import {products} from '../data/products.js';
 let productsHTML  = ''; // initially empty because if no item is present 
 
 products.forEach((p)=>{
